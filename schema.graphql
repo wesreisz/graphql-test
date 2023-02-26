@@ -1,0 +1,13 @@
+type RandomDie {
+  roll(numSides: Int!): [Int]
+}
+
+"Testing basic rules around creating graphql"
+type Query {
+  "Simple query that returns a response"
+  hello: String
+  "Simple query that returns my name"
+  name: String
+  "Demonstrates accepting some arguements and doing some logic"
+  rollDice(numDice: Int!, numSides: Int): [Int]
+}
