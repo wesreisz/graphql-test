@@ -2,12 +2,26 @@ type RandomDie {
   roll(numSides: Int!): [Int]
 }
 
+type Address {
+  "Required Address Components"
+  street1: String
+  "Optional additional information for address"
+  street2: String
+  city: String
+  state: String
+  zip: String
+}
+
 "Testing basic rules around creating graphql"
 type Query {
   "Simple query that returns a response"
   hello: String
   "Simple query that returns my name"
   name: String
+  "Returns an Address"
+  address: Address
   "Demonstrates accepting some arguements and doing some logic"
   rollDice(numDice: Int!, numSides: Int): [Int]
+  "Repeats a message from the server and adds to it"
+  echo(message: String): String
 }

@@ -19,12 +19,24 @@ var root = {
   name: () => {
     return 'Wesley Reisz';
   },
+  address: () => {
+    return {
+      street1: '1 National Trust Way',
+      street2: 'Attn: Wes Reisz',
+      city: 'Louisville',
+      state: 'Kentucky',
+      zip: '40071'
+    }
+  },
   rollDice: (args) => {
     var output = [];
     for (var i = 0; i < args.numDice; i++) {
       output.push(1 + Math.floor(Math.random() * (args.numSides || 6)));
     }
     return output;
+  },
+  echo: (args) => {
+    return "Repeating " + args.message;
   }
 };
 
